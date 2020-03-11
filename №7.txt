@@ -15,26 +15,25 @@ ifstream myfile1;
 myfile1.open("C:\\Users\\Student\\Desktop\\Praktika5KirillinaA\\input1.txt");
 if (myfile1.is_open())
 {
-cout«"1 файл открыт"«endl;
+cout << "1 файл открыт"«endl;
 }
 if(!myfile1.is_open())
 {
-cerr«"Файл не открыт!";
+cerr << "1 файл не открыт!";
 }
-
 for (int i = 0; i < 100; i++) {
 myfile1 » a[i];
 }
-
 ofstream myfile2;
 myfile2.open("output1.txt");
 int start=clock(); //запускаем время старта
+                                              //сортировка методом пузырька по убыванию
 int z;
 for (int i = 0; i < 100; i++)
 {
 for (int j = i + 1; j < 100; j++)
 {
-if (a[i] < a[j]) { //метод пузырька по убыванию
+if (a[i] < a[j]) { 
 z = a[i];
 a[i] = a[j];
 a[j] = z;
@@ -62,26 +61,26 @@ ifstream myfile3;
 myfile3.open("C:\\Users\\Student\\Desktop\\Praktika5KirillinaA\\input2.txt");
 if (myfile3.is_open())
 {
-cerr«"2 файл открыт"«endl;
+cout << "2 файл открыт"«endl;
 }
 if(!myfile3.is_open())
 {
-cerr«"Файл не открыт!";
+cerr << "2 файл не открыт!";
 }
 for(int i=0;i<1000;i++)
 {
 myfile3»a[i];
 }
-
 ofstream myfile4;
 myfile4.open("output2.txt");
 int start=clock(); //запускаем время старта
+                                              //сортировка методом пузырька по убыванию
 int z;
 for (int i = 0; i < 1000; i++)
 {
 for (int j = i + 1; j < 1000; j++)
 {
-if (a[i] < a[j]) { //метод пузырька по убыванию
+if (a[i] < a[j]) { 
 z = a[i];
 a[i] = a[j];
 a[j] = z;
@@ -108,20 +107,20 @@ ifstream myfile5;
 myfile5.open("C:\\Users\\Student\\Desktop\\Praktika5KirillinaA\\input3.txt");
 if (myfile5.is_open())
 {
-cerr«"3 файл открыт"«endl;
+cout << "3 файл открыт"«endl;
 }
 if(!myfile5.is_open())
 {
-cerr«"Файл не открыт!";
+cerr << "3 файл не открыт!";
 }
 for(int i=0;i<10000;i++)
 {
 myfile5»a[i];
 }
-
 ofstream myfile6;
 myfile6.open("output3.txt");
 int start=clock(); //запускаем время старта
+                                              //сортировка методом пузырька по убыванию
 int z;
 for (int i = 0; i < 10000; i++)
 {
@@ -154,20 +153,20 @@ ifstream myfile7;
 myfile7.open("C:\\Users\\Student\\Desktop\\Praktika5KirillinaA\\input4.txt");
 if (myfile7.is_open())
 {
-cerr«"4 файл открыт"«endl;
+cout«"4 файл открыт"«endl;
 }
 if(!myfile7.is_open())
 {
-cerr«"File is not opened!";
+cerr«"4 файл не открыт!";
 }
 for(int i=0;i<100000;i++)
 {
 myfile7»a[i];
 }
-
 ofstream myfile8;
 myfile8.open("output4.txt");
 int start=clock(); //запускаем время старта
+                                              //сортировка методом пузырька по убыванию
 int z;
 for (int i = 0; i < 100000; i++)
 {
