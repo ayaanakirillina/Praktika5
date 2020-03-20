@@ -8,19 +8,16 @@
 #include <fstream>
 #include <ctime>
 using namespace std;
-void F1()
-{
+void F1() {
 int n=100;
 setlocale(LC_ALL,"rus");
 int*a = new int[n];
 ifstream myfile1;
 myfile1.open("C:\\Users\\Student\\Desktop\\Praktika5KirillinaA\\input1.txt");
-if (myfile1.is_open())
-{
+if (myfile1.is_open()) {
 cout << "1 файл открыт" << endl;
 }
-if(!myfile1.is_open())
-{
+if(!myfile1.is_open()) {
 cerr << "1 файл не открыт!\n";
 }
 for (int i = 0; i < n; i++) {
@@ -41,8 +38,7 @@ for(i=0;i<n;i++) //цикл проходов, i-номер прохода
 		//место найдено, вставить элемент
 	a[j+1]=x;
 }
-for(int i=0;i<n;i++) 
-{
+for(int i=0;i<n;i++) {
 	myfile2<<a[i];
 	myfile2<<endl;
 }
@@ -57,23 +53,19 @@ myfile2.close();
 delete[] a;
 }
 
-void F2()
-{
+void F2() {
 int n=1000;
 setlocale(LC_ALL,"rus");
 int*a = new int[n];
 ifstream myfile3;
 myfile3.open("C:\\Users\\Student\\Desktop\\Praktika5KirillinaA\\input2.txt");
-if (myfile3.is_open())
-{
+if (myfile3.is_open()) {
 cout << "2 файл открыт" << endl;
 }
-if(!myfile3.is_open())
-{
+if(!myfile3.is_open()) {
 cerr << "2 файл не открыт!\n";
 }
-for(int i=0;i<n;i++)
-{
+for(int i=0;i<n;i++) {
 myfile3 >> a[i];
 }
 ofstream myfile4;
@@ -83,8 +75,7 @@ int start=clock(); //запускаем время старта
 for(int i=0;i<n;i++)
 	for(int j=i;j>0 && a[j-1]>a[j]; j--) //пока j>0 и элемент j-1>j
 		swap(a[j-1],a[j]); //меняем местами элементы j и j-1
-for(int i=0;i<n;i++)
-{
+for(int i=0;i<n;i++) {
 myfile4 << a[i];
 myfile4 << endl;
 }
@@ -98,34 +89,29 @@ myfile4.close();
 delete[] a;
 }
 
-void F3()
-{
+void F3() {
 int n=10000;
 setlocale(LC_ALL,"rus");
 int*a = new int[n];
 ifstream myfile5;
 myfile5.open("C:\\Users\\Student\\Desktop\\Praktika5KirillinaA\\input3.txt");
-if (myfile5.is_open())
-{
+if (myfile5.is_open()) {
 cout<< "3 файл открыт"<< endl;
 }
-if(!myfile5.is_open())
-{
+if(!myfile5.is_open()) {
 cerr << "3 файл не открыт!\n";
 }
-for(int i=0;i<n;i++)
-{
+for(int i=0;i<n;i++) {
 myfile5 >> a[i];
 }
 ofstream myfile6;
 myfile6.open("output3.txt");
 int start=clock(); //запускаем время старта
-												//ñîðòèðîâêà ìåòîäîì âñòàâêè ïî óáûâàíèþ
+												//сортировка методом вставки
 for(int i=0;i<n;i++)
 	for(int j=i;j>0 && a[j-1]<a[j]; j--) //пока j>0 и элемент j-1>j
 		swap(a[j-1],a[j]); //меняем местами элементы j и j-1
-for(int i=0;i<n;i++)
-{
+for(int i=0;i<n;i++) {
 myfile6 << a[i];
 myfile6 << endl;
 }
@@ -139,23 +125,19 @@ myfile6.close();
 delete[] a;
 }
 
-void F4()
-{
+void F4() {
 int n=100000;
 setlocale(LC_ALL,"rus");
 int*a = new int[n];
 ifstream myfile7;
 myfile7.open("C:\\Users\\Student\\Desktop\\Praktika5KirillinaA\\input4.txt");
-if (myfile7.is_open())
-{
+if (myfile7.is_open()) {
 cerr << "4 файл  открыт"<< endl;
 }
-if(!myfile7.is_open())
-{
+if(!myfile7.is_open()) {
 cerr << "4 файл не открыт!\n";
 }
-for(int i=0;i<n;i++)
-{
+for(int i=0;i<n;i++) {
 myfile7 >> a[i];
 }
 ofstream myfile8;
@@ -165,8 +147,7 @@ int start=clock(); //запускаем время старта
 for(int i=0;i<n;i++)
 	for(int j=i;j>0 && a[j-1]<a[j]; j--) //пока j>0 и элемент j-1>j
 		swap(a[j-1],a[j]); //меняем местами элементы j и j-1
-for(int i=0;i<n;i++)
-{
+for(int i=0;i<n;i++) {
 myfile8 << a[i];
 myfile8 << endl;
 }
@@ -179,8 +160,7 @@ myfile8.close();
 delete[] a;
 }
 
-int main()
-{
+int main() {
 cout << "GOOD LUCK!" << endl;
 F1();
 F2();
