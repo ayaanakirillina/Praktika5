@@ -7,18 +7,15 @@
 #include <fstream>
 #include <ctime>
 using namespace std;
-void F1()
-{
+void F1() {
 setlocale(LC_ALL,"rus");
 int*a = new int[100];
 ifstream myfile1;
 myfile1.open("C:\\Users\\Student\\Desktop\\Praktika5KirillinaA\\input1.txt");
-if (myfile1.is_open())
-{
+if (myfile1.is_open()) {
 cout << "1 файл открыт"«endl;
 }
-if(!myfile1.is_open())
-{
+if(!myfile1.is_open()) {
 cerr << "1 файл не открыт!";
 }
 for (int i = 0; i < 100; i++) {
@@ -29,10 +26,8 @@ myfile2.open("output1.txt");
 int start=clock(); //запускаем время старта
                                               //сортировка методом пузырька по убыванию
 int z;
-for (int i = 0; i < 100; i++)
-{
-for (int j = i + 1; j < 100; j++)
-{
+for (int i = 0; i < 100; i++) {
+for (int j = i + 1; j < 100; j++) {
 if (a[i] < a[j]) { 
 z = a[i];
 a[i] = a[j];
@@ -53,22 +48,18 @@ myfile2.close();
 delete[] a;
 }
 
-void F2()
-{
+void F2() {
 setlocale(LC_ALL,"rus");
 int*a = new int[1000];
 ifstream myfile3;
 myfile3.open("C:\\Users\\Student\\Desktop\\Praktika5KirillinaA\\input2.txt");
-if (myfile3.is_open())
-{
+if (myfile3.is_open()) {
 cout << "2 файл открыт"«endl;
 }
-if(!myfile3.is_open())
-{
+if(!myfile3.is_open()) {
 cerr << "2 файл не открыт!";
 }
-for(int i=0;i<1000;i++)
-{
+for(int i=0;i<1000;i++) {
 myfile3»a[i];
 }
 ofstream myfile4;
@@ -76,10 +67,8 @@ myfile4.open("output2.txt");
 int start=clock(); //запускаем время старта
                                               //сортировка методом пузырька по убыванию
 int z;
-for (int i = 0; i < 1000; i++)
-{
-for (int j = i + 1; j < 1000; j++)
-{
+for (int i = 0; i < 1000; i++) {
+for (int j = i + 1; j < 1000; j++) {
 if (a[i] < a[j]) { 
 z = a[i];
 a[i] = a[j];
@@ -91,7 +80,7 @@ myfile4«endl;
 }
 
 int end=clock(); //запускаем время окончания
-double t=(end-start); //команда CLOCKS_PER_SEC нужна для перевода результата функции clock в секунды
+double t=(end-start); 
 myfile4«"Время выполнения работы программы в миллисекундах: "«t«endl;
 
 myfile3.close();
@@ -99,22 +88,18 @@ myfile4.close();
 delete[] a;
 }
 
-void F3()
-{
+void F3() {
 setlocale(LC_ALL,"rus");
 int*a = new int[10000];
 ifstream myfile5;
 myfile5.open("C:\\Users\\Student\\Desktop\\Praktika5KirillinaA\\input3.txt");
-if (myfile5.is_open())
-{
+if (myfile5.is_open()) {
 cout << "3 файл открыт"«endl;
 }
-if(!myfile5.is_open())
-{
+if(!myfile5.is_open()) {
 cerr << "3 файл не открыт!";
 }
-for(int i=0;i<10000;i++)
-{
+for(int i=0;i<10000;i++) {
 myfile5»a[i];
 }
 ofstream myfile6;
@@ -122,11 +107,9 @@ myfile6.open("output3.txt");
 int start=clock(); //запускаем время старта
                                               //сортировка методом пузырька по убыванию
 int z;
-for (int i = 0; i < 10000; i++)
-{
-for (int j = i + 1; j < 10000; j++)
-{
-if (a[i] < a[j]) { //метод пузырька по убыванию
+for (int i = 0; i < 10000; i++) {
+for (int j = i + 1; j < 10000; j++) {
+if (a[i] < a[j]) { 
 z = a[i];
 a[i] = a[j];
 a[j] = z;
@@ -145,22 +128,18 @@ myfile6.close();
 delete[] a;
 }
 
-void F4()
-{
+void F4() {
 setlocale(LC_ALL,"rus");
 int*a = new int[100000];
 ifstream myfile7;
 myfile7.open("C:\\Users\\Student\\Desktop\\Praktika5KirillinaA\\input4.txt");
-if (myfile7.is_open())
-{
+if (myfile7.is_open()) {
 cout«"4 файл открыт"«endl;
 }
-if(!myfile7.is_open())
-{
+if(!myfile7.is_open()) {
 cerr«"4 файл не открыт!";
 }
-for(int i=0;i<100000;i++)
-{
+for(int i=0;i<100000;i++) {
 myfile7»a[i];
 }
 ofstream myfile8;
@@ -168,11 +147,9 @@ myfile8.open("output4.txt");
 int start=clock(); //запускаем время старта
                                               //сортировка методом пузырька по убыванию
 int z;
-for (int i = 0; i < 100000; i++)
-{
-for (int j = i + 1; j < 100000; j++)
-{
-if (a[i] < a[j]) { //метод пузырька по убыванию
+for (int i = 0; i < 100000; i++) {
+for (int j = i + 1; j < 100000; j++) {
+if (a[i] < a[j]) { 
 z = a[i];
 a[i] = a[j];
 a[j] = z;
@@ -191,8 +168,7 @@ myfile8.close();
 delete[] a;
 }
 
-int main()
-{
+int main() {
 cout«"GOOD LUCK!"«endl;
 F1();
 F2();
