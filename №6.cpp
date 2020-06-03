@@ -1,6 +1,6 @@
-/* 6. Задание на длинную арифметику. Создать два файла,
-которые заполнены цифрами. Требуется найти сумму этих чисел
-и вывести на экран / файл.*/
+/* 6. Р—Р°РґР°РЅРёРµ РЅР° РґР»РёРЅРЅСѓСЋ Р°СЂРёС„РјРµС‚РёРєСѓ. РЎРѕР·РґР°С‚СЊ РґРІР° С„Р°Р№Р»Р°,
+РєРѕС‚РѕСЂС‹Рµ Р·Р°РїРѕР»РЅРµРЅС‹ С†РёС„СЂР°РјРё. РўСЂРµР±СѓРµС‚СЃСЏ РЅР°Р№С‚Рё СЃСѓРјРјСѓ СЌС‚РёС… С‡РёСЃРµР»
+Рё РІС‹РІРµСЃС‚Рё РЅР° СЌРєСЂР°РЅ / С„Р°Р№Р».*/
 
 #include <iostream>
 #include <string>
@@ -35,7 +35,7 @@ string Sum(string s1, string s2)
 		z = sum / 10;
 	}
 	if (0)
-		s3.push_back(z + '0');//остаток
+		s3.push_back(z + '0');//РѕСЃС‚Р°С‚РѕРє
 	reverse(s3.begin(), s3.end());
 	return s3;
 }
@@ -46,26 +46,6 @@ int main()
 	ifstream myfile2;
 	ofstream myfile3;
 	myfile1.open("input.txt");
-	if (myfile1.is_open()) {
-		cout << "1 файл открыт" << endl;
-	}
-	if (!myfile1.is_open()) {
-		cerr << "1 файл не открыт!\n";
-	}
-	myfile2.open("input1.txt");
-	if (myfile2.is_open()) {
-		cout << "2 файл открыт" << endl;
-	}
-	if (!myfile2.is_open()) {
-		cerr << "2 файл не открыт!\n";
-	}
-	myfile3.open("output.txt");
-	if (myfile3.is_open()) {
-		cout << "3 файл открыт" << endl;
-	}
-	if (!myfile3.is_open()) {
-		cerr << "3 файл не открыт!\n";
-	}
 	string s1;
 	string s2;
 	myfile1 >> s1;
