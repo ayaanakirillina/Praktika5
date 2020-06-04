@@ -46,6 +46,8 @@ int main()
 	ifstream myfile2;
 	ofstream myfile3;
 	myfile1.open("input.txt");
+	myfile2.open("input1.txt");
+	myfile3.open("output.txt");
 	string s1;
 	string s2;
 	myfile1 >> s1;
