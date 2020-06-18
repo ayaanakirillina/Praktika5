@@ -1,56 +1,38 @@
-/* 4. Р•СЃС‚СЊ С„Р°Р№Р» input.txt РєРѕС‚РѕСЂС‹Р№ Р·Р°РїРѕР»РЅРµРЅ РґРµР№СЃС‚РІРёС‚РµР»СЊРЅС‹РјРё
-   С‡РёСЃР»Р°РјРё. РќР°Р№РґРёС‚Рµ СЃСѓРјРјСѓ РїРµСЂРІРѕРіРѕ С‡РёСЃР»Р° Рё РїРѕСЃР»РµРґРЅРµРіРѕ С‡РёСЃР»Р°.
-   Р—Р°РїРёС€РёС‚Рµ РѕС‚РІРµС‚ РІ С„Р°Р№Р» output.txt. */
+/* 4. Есть файл input.txt который заполнен действительными числами. Найдите сумму первого числа и последнего числа. Запишите ответ в файл output.txt. */
+   //дробные
 
 #include <iostream>
 #include <fstream>
-#include <string>
+#include <ctime>
 
 using namespace std;
 
-int main()
+void main()
 {
-	setlocale(LC_ALL, "");
-	ifstream myfile1;
+	srand(time(NULL));
+	int i, n;
+	cout << "Vvedite kol-vo chisel: ";
+	cin >> n;
+	float *a = new float[n];
+	float *b = new float[n];
+	ofstream myfile1;
 	myfile1.open("input.txt");
-	if (myfile1.is_open()) {
-		cout << "1 С„Р°Р№Р» РѕС‚РєСЂС‹С‚" << endl;
-	}
-	if (!myfile1.is_open()) {
-		cerr << "1 С„Р°Р№Р» РЅРµ РѕС‚РєСЂС‹С‚!\n";
+	for (i = 0; i < n; i++)
+	{
+		a[i] = rand() % 101 - 50;
+		b[i] = rand() % 101 - 50;
+		myfile1 << a[i] + 0.01*b[i] << " ";
 	}
 	ofstream myfile2;
-	myfile2.open("output.txt");
-	if (myfile2.is_open()) {
-		cout << "2 С„Р°Р№Р» РѕС‚РєСЂС‹С‚" << endl;
-	}
-	if (!myfile2.is_open()) {
-		cerr << "2 С„Р°Р№Р» РЅРµ РѕС‚РєСЂС‹С‚!\n";
-	}
-	char chisla[100];
-	int a[100], x[100];
-	myfile1.get(chisla, 100);
-	int l = strlen(chisla);
-	int d = 0, z = 0;
-	a[0] = 0;
-	l++;
-	chisla[l - 1] = ' ';
-	for (int i = 0; i < l; i++)
-	{
-		if (chisla[i] >= '0' && chisla[i] <= '9')
-		{
-			a[z] = a[z] * pow(10, d) + (chisla[i] - 48);
-			d++;
-		}
-		else
-		{
-			x[z] = a[z];
-			z++;
-			a[z] = 0;
-			d = 0;
-		}
-	}
-	myfile2 << "РЎСѓРјРјР° РїРµСЂРІРѕРіРѕ Рё РїРѕСЃР»РµРґРЅРµРіРѕ С‡РёСЃР»Р°:\n" << x[0] + x[z - 1];
+	myfile2.open("output2.txt");
+	float sum=0.0;
 
+	sum = (a[0]+0.01*b[0]) + (a[n-1]+0.01*b[n-1]);
+	
+	myfile2 << "Summa pervogo i poslednego chisla: " << sum;
+
+
+	myfile1.close();
+	delete[] a;
 	system("pause");
 }
